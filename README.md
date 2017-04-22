@@ -30,12 +30,12 @@
 
 ## messages table
 
-|  Column   |  Type   |              Option                    |
-|:----------|:-------:|:---------------------------------------|
-| body      | text    | null: false                            |
-| image     | string  |                                        |
-| group_id  | integer | foreign_key: true                      |
-| user_id   | integer | foreign_key: true                      |
+|  Column   |  Type      |              Option                    |
+|:----------|:----------:|:---------------------------------------|
+| body      | text       | null: false                            |
+| image     | string     |                                        |
+| group_id  | references | foreign_key: true                      |
+| user_id   | references | foreign_key: true                      |
 
 ## Association
 
@@ -45,10 +45,10 @@
 
 ## groups_users table
 
-|  Column   |  Type   |              Option                    |
-|:----------|:-------:|:---------------------------------------|
-| group_id  | integer | foreign_key: true                      |
-| user_id   | integer | foreign_key: true                      |
+|  Column   |  Type      |              Option                    |
+|:----------|:----------:|:---------------------------------------|
+| group_id  | references | foreign_key: true                      |
+| user_id   | references | foreign_key: true                      |
 
 ## Association
 
