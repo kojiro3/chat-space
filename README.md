@@ -16,7 +16,6 @@
 
 * has_many :members
 
-
 ## groups table
 
 |  Column   |  Type   |              Option                    |
@@ -30,3 +29,18 @@
 * has_many :messages
 
 * has_many :members
+
+## messages table
+
+|  Column   |  Type   |              Option                    |
+|:----------|:-------:|:---------------------------------------|
+| body      | text    | null: false                            |
+| image     | string  |                                        |
+| group_id  | integer | foreign_key: true                      |
+| user_id   | integer | foreign_key: true                      |
+
+## Association
+
+* belongs_to :group
+
+* belongs_to :user
