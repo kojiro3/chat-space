@@ -8,11 +8,11 @@
 
 ## Association
 
-* has_many :groups, through: members
+* has_many :groups, through: groups_users
 
 * has_many :messages
 
-* has_many :members
+* has_many :groups_users
 
 ## groups table
 
@@ -22,11 +22,11 @@
 
 ## Association
 
-* has_many :users, through: members
+* has_many :users, through: groups_users
 
 * has_many :messages
 
-* has_many :members
+* has_many :groups_users
 
 ## messages table
 
@@ -43,7 +43,7 @@
 
 * belongs_to :user
 
-## members table
+## groups_users table
 
 |  Column   |  Type   |              Option                    |
 |:----------|:-------:|:---------------------------------------|
