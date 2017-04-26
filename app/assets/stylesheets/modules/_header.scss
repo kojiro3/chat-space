@@ -1,10 +1,8 @@
-@import "./config/variable";
-
 .header {
   background-color: $blue;
   width: 100%;
   text-align: center;
   &__message {
-    color: #FFFFFF;
+    color: $white;
   }
 }

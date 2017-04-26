@@ -7,7 +7,7 @@
   width: 300px;
   height: 100vh;
   background-color: #2f3e51;
-  color: #FFFFFF;
+  color: $white;
   float: left;
   &__user {
     height: 15vh;
@@ -20,7 +20,7 @@
     .fa {
       float: right;
       line-height: 15vh;
-      color: #FFFFFF;
+      color: $white;
     }
   }
   &__group {
