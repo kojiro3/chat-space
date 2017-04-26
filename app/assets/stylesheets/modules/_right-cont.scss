@@ -28,7 +28,7 @@
       &__member {
         p {
           float: left;
-          @include font-size_color_padding(12px, #999999, 15px 0 0);
+          @include font-size_color_padding(12px, $font-pale, 15px 0 0);
         }
       }
     }
@@ -78,22 +78,23 @@
 .member {
   &__list {
     float: left;
-    @include font-size_color_padding(12px, #999999, 15px 0 0 5px);
+    @include font-size_color_padding(12px, $font-pale, 15px 0 0 5px);
     font-style: italic;
   }
 }
 
 .chat {
   &__name {
-    @include font-size_color_padding(16px, #434A54, 40px 0 0);
+    @include font-size_color_padding(16px, $font-dark, 40px 0 0);
     float: left;
+    font-weight: bold;
   }
   &__date {
-    @include font-size_color_padding(12px, #999999, 42px 0 0 10px);
+    @include font-size_color_padding(12px, $font-pale, 42px 0 0 10px);
     float: left;
   }
   &__message {
-    @include font-size_color_padding(14px, #434A54, 10px 0 0);
+    @include font-size_color_padding(14px, $font-dark, 10px 0 0);
     clear: both;
   }
 }
