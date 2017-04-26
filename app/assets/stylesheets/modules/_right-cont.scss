@@ -1,3 +1,5 @@
+@import "./config/variable";
+
 @mixin font-size_color_padding($font, $color, $padd){
   font-size: $font;
   color: $color;
@@ -9,9 +11,6 @@
   bottom: $bottom;
   right: $right;
 }
-
-$blue: #38AEF0;
-$padding-main: 0 40px 0 40px;
 
 .right-cont {
   background-color: #AAAAAA;

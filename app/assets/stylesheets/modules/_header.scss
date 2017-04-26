@@ -1,5 +1,7 @@
+@import "./config/variable";
+
 .header {
-  background-color: #38AEF0;
+  background-color: $blue;
   width: 100%;
   text-align: center;
   &__message {
