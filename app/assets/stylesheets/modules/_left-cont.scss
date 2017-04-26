@@ -1,0 +1,40 @@
+@mixin font-size_padding($font, $padd){
+  font-size: $font;
+  padding: $padd;
+}
+
+.left-cont {
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  color: $white;
+  float: left;
+  &__user {
+    height: 15vh;
+    background-color: #253141;
+    @include font-size_padding(16px, 0 20px);
+    line-height: 15vh;
+    &__name {
+      float: left;
+    }
+    .fa {
+      float: right;
+      line-height: 15vh;
+      color: $white;
+    }
+  }
+  &__group {
+    padding: 0 20px;
+  }
+}
+
+.groups {
+  &__list {
+    &__name {
+      @include font-size_padding(15px, 20px 0 5px);
+    }
+    &__message {
+      @include font-size_padding(11px, 0 0 20px);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+%header.header
+  %p.header__message チャットグループが作成されました。
+
+.left-cont
+  .left-cont__user
+    %p.left-cont__user__name UserName
+    = link_to root_path do
+      %i.fa.fa-cog.fa-fw
+    = link_to root_path do
+      %i.fa.fa-pencil-square-o.fa-fw
+  .left-cont__group
+    %ul.groups
+      = render 'group'
+      = render 'group'
+      = render 'group'
+
+.right-cont
+  .right-cont__group
+    .right-cont__group__name GroupName
+    .right-cont__group__member
+      %p MEMBER:
+      %ul.member
+        %li.member__list kojiro
+        %li.member__list marie
+    = link_to root_path do
+      %p.edit-button Edit
+  .right-cont__chat
+    %ul.caht
+      = render 'chat'
+      = render 'chat'
+      = render 'chat'
+  .right-cont__message
+    = form_tag do
+      = text_field_tag :text, '', class: "right-cont__message__field", placeholder: "type a message"
+      %label{class: "chat-file", for: "message_image"}
+        %input{type: "file", class: "image", name: "image", id: "message_image", style: "display:none;"}
+        %i.fa.fa-picture-o
+      %input{type: "submit", value: "Send", class: "send-button"}
