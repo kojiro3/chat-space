@@ -1,0 +1,103 @@
+@mixin font-size_color_padding($font, $color, $padd){
+  font-size: $font;
+  color: $color;
+  padding: $padd;
+}
+
+@mixin absolute_b_r($bottom, $right){
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+}
+
+$blue: #38AEF0;
+$padding-main: 0 40px 0 40px;
+
+.right-cont {
+  background-color: #AAAAAA;
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  position: relative;
+    &__group {
+      height: calc( 15vh - 2px );
+      padding: $padding-main;
+      background-color: #FFF;
+      border: solid #eeeeee 1px;
+      margin-bottom: 5px;
+      &__name {
+        @include font-size_color_padding(20px, #333333, 35px 0 0);
+      }
+      &__member {
+        p {
+          float: left;
+          @include font-size_color_padding(12px, #999999, 15px 0 0);
+        }
+      }
+    }
+    &__chat {
+      padding: $padding-main;
+      height: calc( 100vh - 15vh - 90px )
+    }
+    &__message {
+      height: 90px;
+      background-color: #808080;
+      @include absolute_b_r(0, 0);
+      width: 100%;
+      &__field {
+        height: 50px;
+        margin: 20px 0 0 50px;
+        padding: 0 0 0 10px;
+        width: calc( 100% - 215px );
+        border: none;
+      }
+      .fa-picture-o {
+        @include absolute_b_r(35px, 165px);
+        color: #333;
+      }
+      .send-button {
+        @include absolute_b_r(20px, 40px);
+        height: 50px;
+        width: 100px;
+        background-color: $blue;
+        color: #FFF;
+        text-aline: center;
+        border: none;
+      }
+    }
+}
+
+.edit-button {
+  height: 40px;
+  float: right;
+  border: solid $blue 1px;
+  position: relative;
+  top: -28px;
+  text-aline: center;
+  padding: 0 20px 0;
+  line-height: 40px;
+  color: $blue;
+}
+
+.member {
+  &__list {
+    float: left;
+    @include font-size_color_padding(12px, #999999, 15px 0 0 5px);
+    font-style: italic;
+  }
+}
+
+.chat {
+  &__name {
+    @include font-size_color_padding(16px, #434A54, 40px 0 0);
+    float: left;
+  }
+  &__date {
+    @include font-size_color_padding(12px, #999999, 42px 0 0 10px);
+    float: left;
+  }
+  &__message {
+    @include font-size_color_padding(14px, #434A54, 10px 0 0);
+    clear: both;
+  }
+}

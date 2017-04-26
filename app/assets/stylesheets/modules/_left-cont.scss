@@ -1,4 +1,4 @@
-@mixin font-size_padding($font,$padd){
+@mixin font-size_padding($font, $padd){
   font-size: $font;
   padding: $padd;
 }
@@ -8,6 +8,7 @@
   height: 100vh;
   background-color: #2f3e51;
   color: #FFFFFF;
+  float: left;
   &__user {
     height: 15vh;
     background-color: #253141;
