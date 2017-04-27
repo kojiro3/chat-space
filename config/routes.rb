@@ -3,5 +3,4 @@ Rails.application.routes.draw do
     :registrations => "users/registrations"
   }
   root 'messages#index'
-  resources :users
 end
