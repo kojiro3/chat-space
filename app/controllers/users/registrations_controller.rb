@@ -19,7 +19,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update_resource(resource, params)
-    binding.pry
     resource.update_with_password(params)
   end
 
