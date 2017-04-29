@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    binding.pry
     params = { group: {
       name: group_params[:name], group_users_attributes: [
         { user_id: current_user.id }
