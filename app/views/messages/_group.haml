@@ -1,4 +1,5 @@
-%li.groups__list
-  %p.groups__list__name
-    = group.name
-  %p.groups__list__message Message
+= link_to "/groups/#{group.id}/messages" do
+  %li.groups__list
+    %p.groups__list__name
+      = group.name
+    %p.groups__list__message Message
