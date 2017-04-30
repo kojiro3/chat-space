@@ -19,6 +19,12 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "chat_group_チャットメンバー", "チャットメンバー", class: "chat-group-form__label"
+      .chat-group-form__field--right
+        #chat-group-users
+          #chat-group-user-22.chat-group-user.clearfix
+            = f.hidden_field "chat_group[user_ids][]", value: "22"
+            %p.chat-group-user__name
+              =current_user.name if user_signed_in?
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
