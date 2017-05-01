@@ -1,28 +1,24 @@
 .left-cont
   .left-cont__user
-    - if user_signed_in?
-      %p.left-cont__user__name= current_user.name
-    - else
-      %p.left-cont__user__name UserName
+    %p.left-cont__user__name= current_user.name
     = link_to edit_user_registration_path do
       %i.fa.fa-cog.fa-fw
     = link_to new_group_path do
       %i.fa.fa-pencil-square-o.fa-fw
   .left-cont__group
     %ul.groups
-      = render 'group'
-      = render 'group'
-      = render 'group'
+      = render @groups
 
 .right-cont
   .right-cont__group
-    .right-cont__group__name GroupName
+    .right-cont__group__name
+      = @group.name
     .right-cont__group__member
       %p MEMBER:
       %ul.member
         %li.member__list kojiro
         %li.member__list marie
-    = link_to root_path do
+    = link_to edit_group_path(@group) do
       %p.edit-button Edit
   .right-cont__chat
     %ul.caht
