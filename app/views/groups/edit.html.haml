@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for(@group, remote: true, authenticity_token: true) do |f|
+  = form_for(@group) do |f|
     = f.hidden_field "utf8", value: "✓"
     = f.hidden_field "_method", value: "patch"
     = f.hidden_field "authenticity_token", value: "U5ABp0/UobRQTSwsR0V40bX1w3t0rZ0CTqrVyLecD+L6sdhBRO/gVcKy7w/Rgxnc7Hf0Ts39996dal3to5fTag=="
