@@ -1,14 +1,11 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for(@group) do |f|
-    = f.hidden_field "utf8", value: "✓"
-    = f.hidden_field "_method", value: "patch"
-    = f.hidden_field "authenticity_token", value: "U5ABp0/UobRQTSwsR0V40bX1w3t0rZ0CTqrVyLecD+L6sdhBRO/gVcKy7w/Rgxnc7Hf0Ts39996dal3to5fTag=="
+  = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "chat_group_name", "グループ名", class: "chat-group-form__label"
       .chat-group-form__field--right
-        = f.text_field :name, id: "chat_group_name", class: "chat-group-form__input", placeholder: "グループ名を入力してください", value: "#{@group.name}"
+        = f.text_field :name, id: "chat_group_name", class: "chat-group-form__input", placeholder: "グループ名を入力してください", value: @group.name
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "chat_group_チャットメンバーを追加", "チャットメンバーを追加", class: "chat-group-form__label"

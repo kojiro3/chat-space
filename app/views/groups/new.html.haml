@@ -1,8 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = form_for(@group, remote: true, authenticity_token: true) do |f|
-    = f.hidden_field "utf8", value: "✓"
-    = f.hidden_field "authenticity_token", value: "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA==]"
+  = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "chat_group_name", "グループ名", class: "chat-group-form__label"
