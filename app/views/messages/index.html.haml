@@ -15,14 +15,16 @@
 .right-cont
   .right-cont__group
     .right-cont__group__name
-      = @group.name
+      = @group.name if @group
     .right-cont__group__member
-      %p MEMBER:
-      %ul.member
-        %li.member__list kojiro
-        %li.member__list marie
-    = link_to edit_group_path(@group) do
-      %p.edit-button Edit
+      - if @group
+        %p MEMBER:
+        %ul.member
+          %li.member__list kojiro
+          %li.member__list marie
+    - if @group
+      = link_to edit_group_path(@group) do
+        %p.edit-button Edit
   .right-cont__chat
     %ul.caht
       = render 'chat'
