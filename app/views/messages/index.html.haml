@@ -32,9 +32,9 @@
     /     %input{type: 'file', class: 'image', name: 'image', id: 'message_image', style: 'display:none;'}
     /     %i.fa.fa-picture-o
     /   %input{type: 'submit', value: 'Send', class: 'send-button'}
-    = form_for @group do |f|
-      = f.text_field :text, class: 'right-cont__message__field', placeholder: 'type a message'
-      / = f.label 'message_image', class: 'chat-file'
-      /   = f.file_field 'image', class: 'image', id: 'message_image', style: 'display:none;'
-      /   %i.fa.fa-picture-o
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'right-cont__message__field', placeholder: 'type a message', value: ''
+      / = f.label :message_image, '', class: 'chat-file'
+      = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
+      %i.fa.fa-picture-o
       = f.submit 'Send', class: 'send-button'
