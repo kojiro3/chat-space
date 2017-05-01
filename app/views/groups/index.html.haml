@@ -1,0 +1,13 @@
+.left-cont
+  .left-cont__user
+    - if user_signed_in?
+      %p.left-cont__user__name= current_user.name
+    - else
+      %p.left-cont__user__name UserName
+    = link_to edit_user_registration_path do
+      %i.fa.fa-cog.fa-fw
+    = link_to new_group_path do
+      %i.fa.fa-pencil-square-o.fa-fw
+  .left-cont__group
+    %ul.groups
+      = render @groups
