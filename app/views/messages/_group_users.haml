@@ -1,0 +1,6 @@
+- @group_users.each do |group_users|
+  = link_to "/groups/#{group_users.group.id}/messages" do
+    %li.groups__list
+      %p.groups__list__name
+        = group_users.group.name
+      %p.groups__list__message Message

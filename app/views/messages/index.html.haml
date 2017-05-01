@@ -10,8 +10,7 @@
       %i.fa.fa-pencil-square-o.fa-fw
   .left-cont__group
     %ul.groups
-      - @groups.each do |group|
-        = render 'group', group: group
+      = render 'group_users', group_users: @group_users
 
 .right-cont
   .right-cont__group
