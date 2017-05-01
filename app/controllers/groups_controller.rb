@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+before_action :find_group, only: [:edit, :update]
+
   def new
     @group = Group.new
   end
@@ -15,11 +17,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     @group.name = group_params[:name]
     if @group.save
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'
@@ -33,5 +33,9 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def find_group
+    @group = Group.find(params[:id])
   end
 end
