@@ -2,9 +2,5 @@
   %li.groups__list
     %p.groups__list__name
       = group.name
-    - if group.messages.last
-      %p.groups__list__message
-        = group.messages.last.body
-    - else
-      %p.groups__list__message
-        まだメッセージはありません
+    %p.groups__list__message
+      = group.messages.last ? "#{group.messages.last.body}" : "まだメッセージはありません"
