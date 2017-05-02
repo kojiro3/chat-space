@@ -35,6 +35,7 @@
     &__chat {
       padding: $padding-main;
       height: calc( 100vh - 15vh - 90px );
+      overflow-y: scroll;
     }
     &__message {
       height: 90px;
