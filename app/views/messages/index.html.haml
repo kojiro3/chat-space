@@ -22,16 +22,8 @@
       %p.edit-button Edit
   .right-cont__chat
     %ul.caht
-      = render 'chat'
-      = render 'chat'
-      = render 'chat'
+      = render @messages
   .right-cont__message
-    / = form_tag do
-    /   = text_field_tag :text, '', class: 'right-cont__message__field', placeholder: 'type a message'
-    /   %label{class: 'chat-file', for: 'message_image'}
-    /     %input{type: 'file', class: 'image', name: 'image', id: 'message_image', style: 'display:none;'}
-    /     %i.fa.fa-picture-o
-    /   %input{type: 'submit', value: 'Send', class: 'send-button'}
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: 'right-cont__message__field', placeholder: 'type a message', value: ''
       / = f.label :message_image, '', class: 'chat-file'
