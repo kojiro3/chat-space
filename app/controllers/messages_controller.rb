@@ -13,8 +13,9 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path, notice: 'メッセージ送信成功'
     else
-      flash.now[:alert] = 'メッセージ送信失敗'
-      render :index
+      # flash.now[:alert] = 'メッセージ送信失敗'
+      # render :index
+      redirect_to group_messages_path, notice: "#{@message.errors.full_messages}"
     end
   end
 
