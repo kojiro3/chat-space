@@ -25,6 +25,8 @@
   .right-cont__message
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: 'right-cont__message__field', placeholder: 'type a message', value: ''
-      = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
-      %i.fa.fa-picture-o
+      .field
+        = f.label :image
+        = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
+        %i.fa.fa-picture-o
       = f.submit 'Send', class: 'send-button'
