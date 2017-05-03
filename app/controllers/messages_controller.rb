@@ -9,8 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @user = User.find(current_user.id)
-    @message = @user.messages.build(body: message_params[:body], group_id: group_id_params[:group_id])
+    @message = current_user.messages.new(message_params)
     if @message.save
       redirect_to group_messages_path, notice: 'メッセージ送信成功'
     else
@@ -22,10 +21,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body)
-  end
-
-  def group_id_params
-    params.permit(:group_id)
+    params.require(:message).permit(:body).merge(group_id: params[:group_id])
   end
 end
