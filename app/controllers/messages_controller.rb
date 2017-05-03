@@ -1,11 +1,9 @@
 class MessagesController < ApplicationController
 
+  before_action :set_instance, only: [:index, :create]
+
   def index
-    @group = Group.find(params[:group_id])
-    @groups = current_user.groups
     @message = Message.new
-    @messages = @group.messages
-    @users = @group.users
   end
 
   def create
@@ -13,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path, notice: 'メッセージ送信成功'
     else
-      flash.now[:alert] = 'メッセージ送信失敗'
+      flash.now[:alert] = "#{@message.errors.full_messages}"
       render :index
     end
   end
@@ -21,6 +19,13 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body).merge(group_id: params[:group_id])
+    params.require(:message).permit(:body, :image).merge(group_id: params[:group_id])
+  end
+
+  def set_instance
+    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
+    @messages = @group.messages
+    @users = @group.users
   end
 end
