@@ -12,7 +12,14 @@ describe MessagesController, type: :controller do
       @group = user.groups.first
       get :index, params: { group_id: @group.id }
       groups = user.groups
-      expect(assigns(:groups)).to eq groups
+      expect(assigns(:groups)).to match(groups)
+    end
+
+    it 'assigns the requested messages to @messages' do
+      @group = user.groups.first
+      get :index, params: { group_id: @group.id }
+      messages = @group.messages
+      expect(assigns(:messages)).to match(messages)
     end
 
     it 'renders the :index template' do
