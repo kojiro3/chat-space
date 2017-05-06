@@ -31,6 +31,7 @@ describe MessagesController, type: :controller do
       login_user user
       @group = user.groups.first
     end
+    
     context 'with valid params' do
       let(:params) {{ message: attributes_for(:message, { body: 'hello' }), group_id: @group.id}}
       it 'creates a new Message' do
