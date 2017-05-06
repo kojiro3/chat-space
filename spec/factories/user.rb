@@ -8,11 +8,7 @@ FactoryGirl.define do
     password_confirmation   pass
 
     after(:create) do |user|
-      3.times do
-        temp_group = create(:group)
-        create_list(:message, 3, user: user, group: temp_group)
-        create(:group_user, user: user, group: temp_group)
-      end
+      3.times { create(:group_user, user: user, group: create(:group)) }
     end
   end
 end
