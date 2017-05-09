@@ -21,7 +21,8 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      var name = $('.current_user_name').val();
+      var name = formData.get(
+"message[current_user_name]")
       var html = buildHTML(data, name);
       $('.chat').append(html.name, html.date, html.body);
       textField.val('');
