@@ -23,9 +23,7 @@ $(function() {
     .done(function(data) {
       var name = $('.current_user_name').val();
       var html = buildHTML(data, name);
-      $('.chat').append(html.name);
-      $('.chat').append(html.date);
-      $('.chat').append(html.body);
+      $('.chat').append(html.name, html.date, html.body);
       textField.val('');
       $(".send-button").prop("disabled", false);
     })
