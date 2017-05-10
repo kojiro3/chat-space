@@ -29,5 +29,4 @@
         = f.label :image
         = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
         %i.fa.fa-picture-o
-      = f.hidden_field 'current_user_name', value: current_user.name, class: 'current_user_name'
       = f.submit 'Send', class: 'send-button'

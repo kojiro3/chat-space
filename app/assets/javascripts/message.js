@@ -1,9 +1,9 @@
 $(function() {
-  function buildHTML(message, name) {
-    var html = { body: '', date: '', name: '' };
+  function buildHTML(message) {
+    var html = {};
     html.body = $('<li class="chat__message">').append(message.body);
     html.date = $('<li class="chat__date">').append(message.created_at);
-    html.name = $('<li class="chat__name">').append(name)
+    html.name = $('<li class="chat__name">').append(message.name)
     return html;
   }
 
@@ -21,9 +21,7 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      var name = formData.get(
-"message[current_user_name]")
-      var html = buildHTML(data, name);
+      var html = buildHTML(data);
       $('.chat').append(html.name, html.date, html.body);
       textField.val('');
       $(".send-button").prop("disabled", false);

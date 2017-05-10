@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path, notice: 'メッセージ送信成功' }
-        format.json { render json: @message }
+        format.json
       end
     else
       flash.now[:alert] = "#{@message.errors.full_messages}"
