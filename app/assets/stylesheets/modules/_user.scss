@@ -139,3 +139,22 @@
     font-size: 13px;
   }
 }
+
+.chat-group-form__users {
+  &__list {
+    float: left;
+    clear: both;
+  }
+  &__button {
+    float: left;
+    margin-left: 20px;
+    border: none;
+    background-color: #ddd;
+    color: #000;
+  }
+}
+
+.chat-group-user__name__list {
+  float: left;
+  margin-right: 20px;
+}

@@ -34,6 +34,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
+    params.require(:group)[:user_ids].uniq!
     params.require(:group).permit(:name, user_ids: [])
   end
 

@@ -26,7 +26,7 @@
     = form_for [@group, @message], html: { class: 'js-form' } do |f|
       = f.text_field :body, class: 'right-cont__message__field', placeholder: 'type a message', value: ''
       .field
-        = f.label :image
-        = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
-        %i.fa.fa-picture-o
+        = f.label :image do
+          = f.file_field :image, class: 'image', id: 'message_image', style: 'display:none;'
+          %i.fa.fa-picture-o
       = f.submit 'Send', class: 'send-button'
