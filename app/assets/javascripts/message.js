@@ -4,6 +4,7 @@ $(function() {
     html.body = $('<li class="chat__message">').append(message.body);
     html.date = $('<li class="chat__date">').append(message.created_at);
     html.name = $('<li class="chat__name">').append(message.name)
+    html.image = $(`<image alt="image" src=${message.image.url}>`)
     return html;
   }
 
@@ -21,8 +22,9 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
+      console.log(data.image.url)
       var html = buildHTML(data);
-      $('.chat').append(html.name, html.date, html.body);
+      $('.chat').append(html.name, html.date, html.body, html.image);
       textField.val('');
       $(".send-button").prop("disabled", false);
     })
