@@ -22,7 +22,6 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      console.log(data.image.url)
       var html = buildHTML(data);
       $('.chat').append(html.name, html.date, html.body, html.image);
       textField.val('');
