@@ -50,6 +50,7 @@ $(function() {
       preWord = user_name
     }
   });
+  
   $('.chat-group-form__users').on('click', '.chat-group-form__users__button', function(e) {
     e.preventDefault();
     var name = $(this).data('name');
