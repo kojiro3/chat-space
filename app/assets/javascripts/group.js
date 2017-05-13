@@ -28,7 +28,7 @@ $(function() {
       if (user_name.length !== 0) {
         $.ajax({
           type: 'GET',
-          url: '/groups/search',
+          url: '/users/search',
           data: {
             keyword: user_name
           },
