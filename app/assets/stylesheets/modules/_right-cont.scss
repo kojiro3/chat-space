@@ -88,14 +88,24 @@
   &__name {
     @include font-size_color_padding(16px, $font-dark, 40px 0 0);
     float: left;
+    clear: both;
     font-weight: bold;
   }
   &__date {
     @include font-size_color_padding(12px, $font-pale, 42px 0 0 10px);
     float: left;
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
   }
   &__message {
     @include font-size_color_padding(14px, $font-dark, 10px 0 0);
     clear: both;
+  }
+  &__image {
+    clear: both;
+    float: left;
   }
 }
