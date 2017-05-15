@@ -59,3 +59,5 @@ end
   gem 'devise'
   gem 'carrierwave', '~> 1.0'
   gem 'rmagick'
+  gem 'fog'
+  gem 'dotenv-rails'
