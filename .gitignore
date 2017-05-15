@@ -14,4 +14,6 @@
 
 public/uploads/message/image/*
 
+vendor/bundle/ruby/*
+
 .env
