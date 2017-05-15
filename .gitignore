@@ -13,3 +13,7 @@
 /tmp
 
 public/uploads/message/image/*
+
+vendor/bundle/*
+
+.env
