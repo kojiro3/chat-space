@@ -13,3 +13,5 @@
 /tmp
 
 public/uploads/message/image/*
+
+/.env
