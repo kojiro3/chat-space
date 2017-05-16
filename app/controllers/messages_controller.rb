@@ -4,6 +4,16 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json { 
+        if params[:last_id]
+          @messages = Message.where("id > #{params[:last_id]}")
+        else
+          @message = Message.last
+        end
+      }
+    end
   end
 
   def create
