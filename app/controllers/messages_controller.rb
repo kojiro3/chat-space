@@ -19,6 +19,11 @@ class MessagesController < ApplicationController
     end
   end
 
+  def search
+    @messages = Message.where("id > #{params[:last_id]}")
+    render 'search', formats: :json, handlers: :jbuilder
+  end
+
   private
 
   def message_params
