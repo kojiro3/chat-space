@@ -6,11 +6,13 @@ class MessagesController < ApplicationController
     @message = Message.new
     respond_to do |format|
       format.html
-      if params[:last_id]
-        format.json { @messages = Message.where("id > #{params[:last_id]}") }
-      else
-        format.json { @message = Message.last }
-      end
+      format.json { 
+        if params[:last_id]
+          @messages = Message.where("id > #{params[:last_id]}")
+        else
+          @message = Message.last
+        end
+      }
     end
   end
 
