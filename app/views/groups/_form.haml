@@ -11,8 +11,6 @@
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
         = text_field_tag :member, nil, id: 'user-search-field', class: 'chat-group-form__input', placeholder: '追加したいユーザー名を入力してください'
-        / = collection_check_boxes :group, :user_ids, User.all, :id, :name do |b|
-        /   = b.label {b.check_box + b.text }
         %ul.chat-group-form__users
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
