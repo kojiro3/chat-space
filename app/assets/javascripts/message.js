@@ -16,7 +16,7 @@ $(function() {
     if (last_id) {
       $.ajax({
         type: 'GET',
-        url: './messages/search',
+        url: './messages',
         data: {
           last_id: last_id
         },
