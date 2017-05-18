@@ -5,6 +5,6 @@ FactoryGirl.define do
     image     'aaaaa'
     user
     group
-    created_at { Faker::Time.between(5.days.ago, Time.now, :all) }
+    # created_at { Faker::Time.between(5.days.ago, Time.now, :all) }
   end
 end
