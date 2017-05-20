@@ -6,7 +6,7 @@ $(function() {
     html.date = $('<li class="chat__date">').append(message.created_at);
     html.name = $('<li class="chat__name">').append(message.name)
     if (message.image.url) {
-      html.image = $(`<image src=${message.image.url} class="chat__image">`)
+      html.image = $('<image src=${message.image.url} class="chat__image">')
     }
     return html;
   }

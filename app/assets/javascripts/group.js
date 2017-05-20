@@ -5,7 +5,7 @@ $(function() {
 
   function appendList(user) {
     var user_name = $('<li class="chat-group-form__users__list">').append(user.name);
-    var button = $(`<a href="" class="chat-group-form__users__button" data-name=${user.name} data-id=${user.id}>`).append('追加');
+    var button = $('<a href="" class="chat-group-form__users__button" data-name=${user.name} data-id=${user.id}>').append('追加');
     list.append(user_name, button);
   }
 
@@ -17,7 +17,7 @@ $(function() {
 
   function appendUserId(user_id) {
     var list = $('#chat-group-user-id');
-    var item = $(`<input type="hidden" name="group[user_ids][]" value=${user_id}>`);
+    var item = $('<input type="hidden" name="group[user_ids][]" value=${user_id}>');
     list.append(item);
   }
 
