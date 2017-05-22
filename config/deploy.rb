@@ -37,7 +37,8 @@ namespace :assets do
           execute "rails assets:precompile"
         end
 
-        execute 'rsync -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
+        # execute 'rsync -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
+        execute 'rsync --rsh="ssh -p 3000" -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
         execute "rm -rf public/assets"
       end
 
