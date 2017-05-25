@@ -15,33 +15,9 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 
-set :assets_roles, [:web, :app]
-
-set :user, 'ec2-user'
-
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
-  end
-  after :updated, "assets:precompile"
-end
-
-namespace :assets do
-  desc "Precompile assets locally and then rsync to web servers"
-  task :precompile do
-    on roles(:web) do
-      rsync_host = host.to_s
-      run_locally do
-        with rails_env: fetch(:stage) do
-          execute "rails assets:precompile"
-        end
-
-        # execute 'rsync -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
-        execute 'rsync --rsh="ssh -p 3000" -av --delete public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/'
-        execute "rm -rf public/assets"
-      end
-
-    end
   end
 end
